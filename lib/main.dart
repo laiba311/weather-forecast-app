@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:weather_api_app/screens/home.dart';
 import 'package:weather_api_app/screens/splash.dart';
 import 'screens/home.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
